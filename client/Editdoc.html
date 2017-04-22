@@ -1,0 +1,41 @@
+<template name="Editdoc"> 
+    <div class="container">
+        <div class="logo">
+            <img src="eLerniamPicsLogo.svg" alt="Logotipo" style="width: 150px; height: auto;">
+        </div>
+        <div class="row">
+            <h2>Modificar dades de la imatge {{editdocumento.nombre}}</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                        <form class="add-objeto edit-documento">
+                            <label for="nombre">Nom</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nom" value="{{editdocumento.nombre}}">
+
+                            
+                            <button class="btn btn-primary" type="submit">Desa els canvis</button>
+                            <button class="btn btn-warning cancel-add" type="button">Cancel</button>
+                            <a class="btn btn-danger" type="button" href="#openModalDelete">Eliminar la imatge</a>
+                            
+                        </form>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div id="openModalDelete" class="modalDialogDelete">
+                <div>
+                    <a href="#closeD" title="CloseD" class="closeD">X</a>
+                        <div style="padding: 30px">
+                            <h4>¿Aquesta assegurança de Eliminar la imatge?</h4>
+                        </div>
+                        <div class="col-md-6" style="text-align: center">        
+                            <button class="btn btn-danger" id="deleteDocumento" type="button">Eliminar</button>
+                        </div>
+                        <div class="col-md-6" style="text-align: center">
+                            <button class="btn btn-warning cancel-add" type="button">Cancel</button>
+                        </div>                         
+                </div>
+            </div>
+
+</template>

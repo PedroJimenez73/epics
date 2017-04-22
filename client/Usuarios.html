@@ -1,0 +1,38 @@
+<template name="Usuarios"> 
+    <div id="page-content-wrapper">
+            <div class="container">
+                <div class="row encabezado">
+                    <h2>Usuarios y Roles</h2>
+                     {{#if isInRole 'admin'}}
+                        <a class="pull-right btn btn-primary" href="/altausuario" type="button"> Crear nuevo Usuario</a>
+                     {{/if}}   
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    {{#if isInRole 'admin'}}
+                        <table class="table table-bordered table-striped tabla">
+                            <thead>
+                                <tr class="filters">
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Rol/Departamento</th>                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each users}}
+                                    <tr>
+                                        <td>{{username}}</td>
+                                        <td><a href="mailto:{{userEmail}}" style="text-decoration: none;">{{userEmail}}</a></td>
+                                        <td>{{userDepartamento}}</td>          
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    {{else}}
+                        <h3>Acceso no autorizado, por favor consulte a su administrador</h3>
+                    {{/if}}
+                    </div>
+                </div>
+            </div>
+    </div>    
+</template>
